@@ -1,0 +1,47 @@
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+
+template <class T>
+class Triple
+{
+    public:
+        Triple(T v1, T v2, T v3);
+        T sum();
+        T product();
+        private:
+        T value1, value2, value3;
+      
+};
+template <class T>
+Triple <T>::Triple(T v1, T v2, T v3)
+{
+    value1=v1;
+    value2=v2;
+    value3=v3;
+}
+template <class T>
+T Triple <T>::sum()
+{
+    return value1+value2+value3;
+}
+template <class T>
+T Triple <T>::product()
+{
+return value1*value2*value3;
+}
+
+int main()
+{
+    Triple <int> numbers(10,20,30);
+    cout <<numbers.sum() <<endl;
+    
+    cout<<numbers.product() << endl; 
+    
+    Triple <float> grades(65.2, 95.7,89.99);
+    cout <<grades.sum() << endl;
+    
+    
+    return 0;
+    
+}

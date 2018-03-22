@@ -1,0 +1,42 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+
+char opposite(char action)
+{
+    if(action == 'R')
+    return 'L';
+    if (action == 'D')
+    return 'U';
+    if (action == 'L')
+    return 'R';
+    if (action == 'U')
+    return 'D';
+        
+    return action;
+}
+
+int main()
+{
+    
+    char action;
+    stack<char> maze;
+    
+    cout << "Please perform the sequence of actions for this maze" <<endl;
+    cin >> action;
+    while (action=='L' || action=='R' || action=='U' || action =='D')
+    {
+        maze.push(action);
+        cin >>action;
+        
+    }
+    
+    cout << "Here are the instructions to get out:" << endl;
+    
+    while (!maze.empty() ) {
+        cout << opposite(maze.top()) << endl;
+        maze.pop();
+    }
+        
+    return 0;
+}    
